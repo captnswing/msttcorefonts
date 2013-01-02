@@ -2,7 +2,7 @@
 # bitstream-vera-fonts
 include_recipe "yum::epel"
 
-["cabextract", "ttmkfdir", "xorg-x11-font-utils"].each do |pkg|
+["wget", "fontconfig", "rpm-build", "cabextract", "ttmkfdir", "xorg-x11-font-utils"].each do |pkg|
   package pkg
 end
 
@@ -14,6 +14,6 @@ end
 
 execute "rpmbuild msttcorefonts.spec" do
   cwd Chef::Config["file_cache_path"]
-  # increase the timeout in the spec file before running rpmbuild
+  # increase the timeout in the spec file to 15sec before running rpmbuild
   command "sed -i s/timeout=5/timeout=15/g msttcorefonts.spec; rpmbuild -bb msttcorefonts.spec"
 end

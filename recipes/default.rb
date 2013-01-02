@@ -8,7 +8,7 @@
 #---------------
 case node["platform"]
   when "centos", "redhat", "scientific", "fedora"
-    include_recipe "chef-msttcorefonts::redhat"
+    include_recipe "chef-msttcorefonts::rhel"
   when "ubuntu"
     include_recipe "chef-msttcorefonts::debian"
 end
