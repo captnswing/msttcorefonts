@@ -2,7 +2,7 @@
 # bitstream-vera-fonts
 include_recipe "yum::epel"
 
-["wget", "fontconfig", "rpm-build", "cabextract", "ttmkfdir", "xorg-x11-font-utils"].each do |pkg|
+%w{wget fontconfig rpm-build cabextract ttmkfdir xorg-x11-font-utils}.each do |pkg|
   package pkg
 end
 
