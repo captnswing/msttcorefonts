@@ -26,5 +26,5 @@ end
 # regenerate font cache
 #---------------
 bash "regenerate fontchache" do
-  code "fc-cache -fv"
+  code "fc-cache -fv >/dev/null"
 end

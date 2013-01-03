@@ -1,5 +1,3 @@
-# rhel 6 http://oimon.wordpress.com/2011/09/05/msttcorefonts-on-rhel6-centos-6-sl6/
-# bitstream-vera-fonts
 include_recipe "yum::epel"
 
 %w{wget fontconfig rpm-build cabextract ttmkfdir xorg-x11-font-utils}.each do |pkg|
@@ -12,8 +10,11 @@ remote_file "#{Chef::Config["file_cache_path"]}/msttcorefonts.spec" do
   mode "0644"
 end
 
-execute "rpmbuild msttcorefonts.spec" do
+execute "rpmbuild-msttcorefonts-spec" do
   cwd Chef::Config["file_cache_path"]
   # increase the timeout in the spec file to 15sec before running rpmbuild
   command "sed -i s/timeout=5/timeout=15/g msttcorefonts.spec; rpmbuild -bb msttcorefonts.spec"
 end
+
+# rhel 6 http://oimon.wordpress.com/2011/09/05/msttcorefonts-on-rhel6-centos-6-sl6/
+# bitstream-vera-fonts
