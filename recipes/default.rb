@@ -25,6 +25,7 @@ end
 #---------------
 # regenerate font cache
 #---------------
-bash "regenerate fontchache" do
-  code "fc-cache -fv >/dev/null"
+execute "regenerate fontchache" do
+  command "fc-cache -fv >/dev/null"
+  action :nothing
 end
