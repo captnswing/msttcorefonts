@@ -22,5 +22,5 @@ bash "run ttf-mscorefonts-installer" do
   apt-get install -y ttf-mscorefonts-installer
   EOS
   creates "/usr/share/fonts/truetype/msttcorefonts/arial.ttf"
-  notifies :run, "execute[regenerate fontchache]"
+  notifies :run, "execute[regenerate fontcache]"
 end

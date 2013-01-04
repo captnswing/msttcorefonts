@@ -15,7 +15,7 @@ execute "rpmbuild-msttcorefonts-spec" do
   # increase the timeout in the spec file to 15sec before running rpmbuild
   command "sed -i s/timeout=5/timeout=15/g msttcorefonts.spec; rpmbuild -bb msttcorefonts.spec"
   creates "/usr/share/fonts/truetype/msttcorefonts/arial.ttf"
-  notifies :run, "execute[regenerate fontchache]"
+  notifies :run, "execute[regenerate fontcache]"
 end
 
 # rhel 6 http://oimon.wordpress.com/2011/09/05/msttcorefonts-on-rhel6-centos-6-sl6/
