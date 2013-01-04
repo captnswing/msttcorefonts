@@ -14,7 +14,7 @@ execute "rpmbuild-msttcorefonts-spec" do
   cwd Chef::Config["file_cache_path"]
   # increase the timeout in the spec file to 15sec before running rpmbuild
   command "sed -i s/timeout=5/timeout=15/g msttcorefonts.spec; rpmbuild -bb msttcorefonts.spec"
-  creates "/usr/share/fonts/truetype/msttcorefonts/arial.ttf"
+  not_if "test -e /usr/share/fonts/truetype/msttcorefonts/arial.ttf"
   notifies :run, "execute[regenerate fontcache]"
 end
 

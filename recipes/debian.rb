@@ -21,6 +21,6 @@ bash "run ttf-mscorefonts-installer" do
   echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | debconf-set-selections
   apt-get install -y ttf-mscorefonts-installer
   EOS
-  creates "/usr/share/fonts/truetype/msttcorefonts/arial.ttf"
+  not_if "test -e /usr/share/fonts/truetype/msttcorefonts/arial.ttf"
   notifies :run, "execute[regenerate fontcache]"
 end
