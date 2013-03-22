@@ -18,6 +18,7 @@ end
 bash "run ttf-mscorefonts-installer" do
   user "root"
   code <<-EOS
+  dpkg --configure -a
   echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | debconf-set-selections
   apt-get install -y ttf-mscorefonts-installer >/dev/null
   EOS
