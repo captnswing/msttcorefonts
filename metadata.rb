@@ -1,5 +1,5 @@
 name "chef-msttcorefonts"
-maintainer "Frank Hoffsümmer"
+maintainer "Frank Hoffsummer"
 maintainer_email "frank.hoffsummer@gmail.com"
 license "Apache 2.0"
 description "Installs Microsoft corefonts on linux boxes"
