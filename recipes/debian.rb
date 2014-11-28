@@ -5,7 +5,7 @@ package "fontconfig"
 #--------
 # from http://askubuntu.com/a/173562
 execute "enable multiverse" do
-  command "sed -i '/^# deb.*multiverse/ s/^# //' /etc/apt/sources.list"
+  command "apt-add-repository multiverse"
   not_if "egrep '^deb.*multiverse' /etc/apt/sources.list"
   # notify "apt-get update" resource found in apt cookbook
   notifies :run, resources(:execute => "apt-get update"), :immediately
