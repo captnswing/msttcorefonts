@@ -1,21 +1,16 @@
 # Description
 
-chef cookbook that installs Microsoft Corefonts.
+~~chef cookbook that installs Microsoft Corefonts.~~
+
+Dockerfile that installs Microsoft Corefonts into an Ubuntu container
 
 * [en.wikipedia.org/wiki/Core_fonts_for_the_Web](http://en.wikipedia.org/wiki/Core_fonts_for_the_Web)
 * [corefonts.sourceforge.net](http://corefonts.sourceforge.net/)
 
-# Requirements
-
-# Usage
-
-# Attributes
-
-# Recipes
 
 # License
 
-Copyright 2012 Frank Hoffsümmer
+Copyright 2016 Frank Hoffsümmer
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
